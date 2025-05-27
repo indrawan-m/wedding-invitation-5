@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+    --font-gayathri: "Gayathri", sans-serif;
+    --font-nunito: "Nunito Sans", sans-serif;
+  }
