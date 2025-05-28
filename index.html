@@ -281,15 +281,15 @@
             const btnText = document.getElementById(btnTextId);
             const svgIcon = document.getElementById(svgId);
 
-            btnText.innerHTML = "Copied &#10003;";
+            btnText.innerHTML = "Copied &#10004;";
             svgIcon.classList.add("hidden");
-            btnText.classList.add('text-lime-600');
+            btnText.style.color = "#65a30d";
 
             // Reset teks tombol setelah 2 detik
             setTimeout(function() {
                 btnText.textContent = "Copy rekening";
                 svgIcon.classList.remove("hidden");
-                btnText.classList.remove('text-lime-600');
+                btnText.style.color = "";
             }, 2000);
         }).catch(function(error) {
             console.error("Gagal menyalin ke clipboard: ", error);
