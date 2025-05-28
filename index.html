@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <section class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/1.jpg');">
+  <section id="hero" class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/1.jpg');">
     <div class="mx-auto h-screen bg-black/60  w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32 " >
       <div class="mx-auto px-5 mt-52 lg:mt-30 max-w-5xl text-white text-left">
         <p class="mt-4 text-base font-nunito text-pretty  sm:text-lg/relaxed dark:text-gray-200">
@@ -19,15 +19,17 @@
           Adam <br> <span class="text-3xl">&</span><br>Hawa
         </p>
     
-        <p>Kepada Yth:</p>
+        <p class="font-nunito">Kepada Yth:</p>
     
-        <p>Tamu Undangan</p>
+        <h2>
+          <span class="font-gayathri text-lg font-bold"></span>
+        </h2>
         
         <!-- <p>Thank you for taking the time to celebrate our special day</p> -->
     
         <div class="mt-6 gap-4 sm:mt-6">
           <a class="inline-flex items-center gap-2 rounded-4xl bg-white/40 px-8 py-3 text-gray-900" href="#">
-            <span class="text-sm font-bold"> Open the Invitation </span>
+            <span class="text-sm font-bold font-nunito"> Open the Invitation </span>
             <svg class="size-5 shadow-sm rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
               viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -160,7 +162,6 @@
     
   </section>
 
-
   <section class="mt-10">
     <p class="text-center text-2xl font-gayathri">Wedding Gift</p>
 
@@ -182,7 +183,7 @@
           </svg>
         </summary>
     
-        <p class="px-4 pt-4 text-gray-900 font-nunito">
+        <p id="nomor-rekening-1" class="px-4 pt-4 text-gray-900 font-nunito">
           000000000
         </p>
         <p class="px-4 text-gray-900 font-nunito">
@@ -190,7 +191,7 @@
         </p>
 
         <button id="btn-1" onclick="copyToClipboard('nomor-rekening-1', 'btn-text-1', 'svg-1')" class="px-4 inline-flex font-light font-nunito items-center  hover:text-black">
-          <span id="btn-text-1">Salin rekening</span>
+          <span id="btn-text-1">Copy Rekening</span>
           <svg id="svg-1" class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="m6 18h-3c-.48 0-1-.379-1-1v-14c0-.481.38-1 1-1h14c.621 0 1 .522 1 1v3h3c.621 0 1 .522 1 1v14c0 .621-.522 1-1 1h-14c-.48 0-1-.379-1-1zm1.5-10.5v13h13v-13zm9-1.5v-2.5h-13v13h2.5v-9.5c0-.481.38-1 1-1z" fill-rule="nonzero"/>
           </svg>
@@ -217,16 +218,16 @@
         </summary>
         
         
-        <p class="px-4 pt-4 text-gray-900 font-nunito">
-          000000000
+        <p id="nomor-rekening-2" class="px-4 pt-4 text-gray-900 font-nunito">
+          1111111111
         </p>
         <p class="px-4 text-gray-900 font-nunito">
           a/n Siti Hawa
         </p>
 
-        <button id="btn-1" onclick="copyToClipboard('nomor-rekening-1', 'btn-text-1', 'svg-1')" class="px-4 inline-flex font-light font-nunito items-center  hover:text-black">
-          <span id="btn-text-1">Salin rekening</span>
-          <svg id="svg-1" class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <button id="btn-2" onclick="copyToClipboard('nomor-rekening-2', 'btn-text-2', 'svg-2')" class="px-4 inline-flex font-light font-nunito items-center  hover:text-black">
+          <span id="btn-text-2">Copy rekening</span>
+          <svg id="svg-2" class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="m6 18h-3c-.48 0-1-.379-1-1v-14c0-.481.38-1 1-1h14c.621 0 1 .522 1 1v3h3c.621 0 1 .522 1 1v14c0 .621-.522 1-1 1h-14c-.48 0-1-.379-1-1zm1.5-10.5v13h13v-13zm9-1.5v-2.5h-13v13h2.5v-9.5c0-.481.38-1 1-1z" fill-rule="nonzero"/>
           </svg>
       </button>
@@ -255,6 +256,46 @@
     </div>
   </div>
 </section>
+
+
+<!-- nama paraeter -->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('nama');
+    
+    const namaContainer = document.querySelector('#hero h2 span');
+        namaContainer.innerText = nama;
+
+    document.querySelector('#gift p span').innerText = nama;
+</script>
+
+<!-- copyToClipboard -->
+ <script>
+    function copyToClipboard(elemenId, btnTextId, svgId) {
+        // Mendapatkan teks dari elemen dengan id 'nomor-rekening'
+        const nomorRekening = document.getElementById(elemenId).textContent;
+
+        // Menyalin teks ke clipboard menggunakan Clipboard API
+        navigator.clipboard.writeText(nomorRekening).then(function() {
+            // Mengubah teks tombol untuk memberi tahu pengguna bahwa teks telah disalin
+            const btnText = document.getElementById(btnTextId);
+            const svgIcon = document.getElementById(svgId);
+
+            btnText.innerHTML = "Copied &#10003;";
+            svgIcon.classList.add("hidden");
+            btnText.classList.add('text-lime-600');
+
+            // Reset teks tombol setelah 2 detik
+            setTimeout(function() {
+                btnText.textContent = "Copy rekening";
+                svgIcon.classList.remove("hidden");
+                btnText.classList.remove('text-lime-600');
+            }, 2000);
+        }).catch(function(error) {
+            console.error("Gagal menyalin ke clipboard: ", error);
+        });
+    }
+</script>
 
 </body>
 </html>
