@@ -100,6 +100,26 @@
     </div>
   </section>
 
+  <!-- Countdown  -->
+  <section
+    id="countdown-section"
+    class="relative bg-cover bg-center bg-no-repeat text-white py-16 max-w-5xl mx-auto"
+    style="background-image: url('/images/1.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay hitam transparan -->
+    
+    <div class="relative z-10 text-center">
+      <h2 class="text-3xl font-semibold font-gayathri mb-6">Menuju Hari Bahagia</h2>
+      <div id="countdown" class="flex justify-center gap-6 text-2xl font-bold font-nunito">
+        <div class="border rounded-sm p-3"><span id="days">00</span><div class="text-sm font-normal">Hari</div></div>
+        <div class="border rounded-sm p-3"><span id="hours">00</span><div class="text-sm font-normal">Jam</div></div>
+        <div class="border rounded-sm p-3"><span id="minutes">00</span><div class="text-sm font-normal">Menit</div></div>
+        <div class="border rounded-sm p-3"><span id="seconds">00</span><div class="text-sm font-normal">Detik</div></div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- acara  -->
   <section class="mt-5">
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8  max-w-5xl mx-auto p-4">
@@ -351,6 +371,34 @@
         });
     }
 </script>
+
+<!-- countdown  -->
+<script>
+  // Ganti dengan tanggal pernikahan kamu
+  const weddingDate = new Date("2025-07-20T10:00:00").getTime();
+
+  const countdownFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      clearInterval(countdownFunction);
+      document.getElementById("countdown").innerHTML = "Selamat Menikah!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days.toString().padStart(2, '0');
+    document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+  }, 1000);
+</script>
+
 
 </body>
 </html>
