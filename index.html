@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="src/output.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
   
@@ -191,54 +192,79 @@
   </section>
 
   <!-- gallery  -->
-  <section class="max-w-3xl mx-auto p-3">
-    <p class="text-center text-2xl font-gayathri mb-3">Gallery</p>
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-          alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
-          alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
-          alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
-          alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
-          alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-          alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg" alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg" alt="gallery-photo" />
-      </div>
-      <div>
-        <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
-          src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
-          alt="gallery-photo" />
-      </div>
+  <section class="max-w-xl mx-auto p-3">
+  <p class="text-center text-2xl font-gayathri mb-3">Gallery</p>
+  <div class="relative">
+    <!-- Container scroll horizontal -->
+    <div
+      id="gallery"
+      class="flex overflow-x-auto scroll-smooth gap-4 no-scrollbar"
+      style="scroll-behavior: smooth;"
+    >
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1470&q=80"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1432462770865-65b70566d673?auto=format&fit=crop&w=1950&q=80"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=2560&q=80"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=2940&q=80"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=2762&q=80"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?auto=format&fit=crop&w=2832&q=80"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg"
+        alt="gallery-photo"
+      />
+      <img
+        class="flex-shrink-0 w-48 h-40 rounded-lg object-cover"
+        src="https://images.unsplash.com/photo-1620064916958-605375619af8?auto=format&fit=crop&w=1493&q=80"
+        alt="gallery-photo"
+      />
     </div>
-  </section>
+
+    <!-- Buttons -->
+    <button
+      id="prevBtn"
+      aria-label="Scroll Left"
+      class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition"
+    >
+      &#10094;
+    </button>
+    <button
+      id="nextBtn"
+      aria-label="Scroll Right"
+      class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition"
+    >
+      &#10095;
+    </button>
+  </div>
+</section>
 
   <!-- wedding gift  -->
   <section class="mt-10">
@@ -401,6 +427,22 @@
   }, 1000);
 </script>
 
+<!-- slider gallery  -->
+<script>
+  const gallery = document.getElementById("gallery");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const scrollAmount = 200; // jumlah px per klik
+
+  prevBtn.addEventListener("click", () => {
+    gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+</script>
 
 </body>
 </html>
