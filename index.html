@@ -387,7 +387,13 @@
 </form>
 
 <div id="wishList" class="mt-10 space-y-4 text-left">
-  <!-- Wishes will appear here -->
+  <form id="wishForm" action="https://script.google.com/macros/s/AKfycbwocAt17FY9me6xt0hVIbDhYF1KYmlnuNmrx9jGtuPFcILte8NMjPaKQ1rLnUZogO9RCQ/exec" method="post" target="hidden_iframe">
+  <input type="text" name="name" id="nameInput" required />
+  <textarea name="message" id="messageInput" required></textarea>
+  <button type="submit">Send</button>
+</form>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 </div>
 
 </section>
