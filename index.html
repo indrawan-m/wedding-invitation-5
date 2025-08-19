@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: url('images/1.jpg');">
   
-  <section id="hero" class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/1.jpg');">
+  <section id="hero" class="bg-fixed bg-cover bg-center bg-no-repeat" style="background-image: url('images/1.jpg');">
     <div class="mx-auto h-screen bg-black/60  w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32 " >
       <div class="mx-auto px-5 mt-52 lg:mt-30 max-w-5xl text-white text-left">
         <p class="mt-4 text-base font-nunito text-pretty  sm:text-lg/relaxed dark:text-gray-200">
@@ -106,7 +106,7 @@
     <div
     id="countdown-section"
     class="relative bg-cover bg-center rounded-xl bg-no-repeat text-white py-16 max-w-5xl mx-auto"
-    style="background-image: url('/images/1.jpg');"
+    
   >
       <div class="absolute inset-0 bg-black/50 rounded-xl"></div> <!-- Overlay hitam transparan -->
       
@@ -359,6 +359,39 @@
   </div>
 </section>
 
+<section>
+  <form id="wishForm" class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+  <div>
+    <label class="block text-left text-gray-700 font-semibold mb-1">Name:</label>
+    <input 
+      type="text" 
+      id="nameInput"
+      class="w-full border border-gray-300 rounded px-4 py-2" 
+      required
+    />
+  </div>
+  <div>
+    <label class="block text-left text-gray-700 font-semibold mb-1">Write Your Wishes:</label>
+    <textarea 
+      id="messageInput"
+      class="w-full border border-gray-300 rounded px-4 py-2 h-32 resize-none" 
+      required
+    ></textarea>
+  </div>
+  <button 
+    type="submit" 
+    class="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded"
+  >
+    Send
+  </button>
+</form>
+
+<div id="wishList" class="mt-10 space-y-4 text-left">
+  <!-- Wishes will appear here -->
+</div>
+
+</section>
+
 
 <!-- nama paraeter -->
 <script>
@@ -442,6 +475,48 @@
     gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 </script>
+
+<!-- wishes  -->
+<script>
+  const form = document.getElementById('wishForm');
+  const nameInput = document.getElementById('nameInput');
+  const messageInput = document.getElementById('messageInput');
+  const wishList = document.getElementById('wishList');
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwocAt17FY9me6xt0hVIbDhYF1KYmlnuNmrx9jGtuPFcILte8NMjPaKQ1rLnUZogO9RCQ/exec';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('name', nameInput.value.trim());
+    formData.append('message', messageInput.value.trim());
+
+    try {
+      await fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      });
+
+      // Tambahkan wish ke tampilan
+      const wishItem = document.createElement('div');
+      wishItem.className = 'bg-pink-50 border border-pink-200 rounded p-4 shadow';
+      wishItem.innerHTML = `
+        <p class="font-semibold text-pink-700">${nameInput.value}:</p>
+        <p class="text-gray-700 mt-1">${messageInput.value}</p>
+      `;
+      wishList.prepend(wishItem);
+
+      // Kosongkan form
+      nameInput.value = '';
+      messageInput.value = '';
+    } catch (error) {
+      alert('Gagal mengirim pesan.');
+      console.error(error);
+    }
+  });
+</script>
+
 
 </body>
 </html>
